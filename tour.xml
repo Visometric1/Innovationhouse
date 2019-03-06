@@ -1,0 +1,575 @@
+﻿<krpano version="1.19" title="Innovation house Tour">
+
+	<include url="skin/vtourskin.xml" />
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="true"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="true"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE|KEEPVIEW"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	 <include url="skin/vtourskin_design_ultra_light.xml" />
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+
+	<scene name="scene_00__Entrance" title="Street view" onstart="" thumburl="panos/00__Entrance.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="5749.527" vlookat="10.744" fovtype="MFOV" fov="114.966" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/00__Entrance.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/00__Entrance.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/00__Entrance.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/00__Entrance.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-13.311" atv="7.701" linkedscene="scene_09__entre" />
+
+	</scene>
+
+	<scene name="scene_01__Alrum_center" title="Alrum center" onstart="" thumburl="panos/01__Alrum_center.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/01__Alrum_center.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/01__Alrum_center.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/01__Alrum_center.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/01__Alrum_center.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="57.823" atv="1.448" linkedscene="scene_05__kitchen" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="111.528" atv="-13.633" linkedscene="scene_09__entre" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="120.383" atv="8.805" linkedscene="scene_07__hallway" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="131.699" atv="6.891" linkedscene="scene_06__meeting_room" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="-141.345" atv="5.115" linkedscene="scene_02__living_room_1" />
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="-66.974" atv="12.808" linkedscene="scene_04__terrace" />
+
+	</scene>
+
+	<scene name="scene_02__Living_room_1" title="Living room 1" onstart="" thumburl="panos/02__Living_room_1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/02__Living_room_1.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/02__Living_room_1.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/02__Living_room_1.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/02__Living_room_1.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="38.335" atv="8.275" linkedscene="scene_03__living_room_2" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-12.804" atv="12.741" linkedscene="scene_01__alrum_center" />
+
+	</scene>
+
+	<scene name="scene_03__Living_room_2" title="Living room 2" onstart="" thumburl="panos/03__Living_room_2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/03__Living_room_2.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/03__Living_room_2.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/03__Living_room_2.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/03__Living_room_2.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-34.712" atv="10.026" linkedscene="scene_02__living_room_1" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="31.618" atv="16.344" linkedscene="scene_01__alrum_center" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="26.006" atv="8.623" linkedscene="scene_04__terrace" />
+
+	</scene>
+
+	<scene name="scene_04__Terrace" title="Terrace" onstart="" thumburl="panos/04__Terrace.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/04__Terrace.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/04__Terrace.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/04__Terrace.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/04__Terrace.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-177.985" atv="12.239" linkedscene="scene_01__alrum_center" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-30.412" atv="13.824" linkedscene="scene_19__exterior2" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="1.919" atv="16.971" linkedscene="scene_21__exterior4" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="105.188" atv="3.626" linkedscene="scene_18__exterior1" />
+
+	</scene>
+
+	<scene name="scene_05__Kitchen" title="Kitchen" onstart="" thumburl="panos/05__Kitchen.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/05__Kitchen.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/05__Kitchen.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/05__Kitchen.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/05__Kitchen.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="36.050" atv="10.507" linkedscene="scene_01__alrum_center" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="60.301" atv="7.665" linkedscene="scene_04__terrace" />
+
+	</scene>
+
+	<scene name="scene_06__Meeting_room" title="Meeting room" onstart="" thumburl="panos/06__Meeting_room.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/06__Meeting_room.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/06__Meeting_room.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/06__Meeting_room.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/06__Meeting_room.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-19.565" atv="14.911" linkedscene="scene_07__hallway" />
+
+	</scene>
+
+	<scene name="scene_07__Hallway" title="Hallway" onstart="" thumburl="panos/07__Hallway.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/07__Hallway.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/07__Hallway.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/07__Hallway.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/07__Hallway.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="129.848" atv="14.260" linkedscene="scene_08__bryggers" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-22.078" atv="17.327" linkedscene="scene_06__meeting_room" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="2.195" atv="7.969" linkedscene="scene_01__alrum_center" />
+
+	</scene>
+
+	<scene name="scene_08__Bryggers" title="Bryggers" onstart="" thumburl="panos/08__Bryggers.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/08__Bryggers.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/08__Bryggers.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/08__Bryggers.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/08__Bryggers.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="58.495" atv="7.320" linkedscene="scene_18__exterior1" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-57.045" atv="16.040" linkedscene="scene_07__hallway" />
+
+	</scene>
+
+	<scene name="scene_09__Entre" title="Groundfloor entrence" onstart="" thumburl="panos/09__Entre.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/09__Entre.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/09__Entre.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/09__Entre.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/09__Entre.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-114.433" atv="15.412" linkedscene="scene_10__garage_bryggers" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-16.829" atv="10.917" linkedscene="scene_14__kidss_room_2" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-10.618" atv="7.528" linkedscene="scene_13__kids_room_1" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="2.553" atv="8.067" linkedscene="scene_11__glass_floor" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="2.041" atv="27.666" linkedscene="scene_01__alrum_center" />
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="-173.852" atv="2.880" linkedscene="scene_00__entrance" />
+
+	</scene>
+
+	<scene name="scene_10__Garage_bryggers" title="Garage bryggers" onstart="" thumburl="panos/10__Garage_bryggers.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/10__Garage_bryggers.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/10__Garage_bryggers.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/10__Garage_bryggers.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/10__Garage_bryggers.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-9.264" atv="13.371" linkedscene="scene_09__entre" />
+
+	</scene>
+
+	<scene name="scene_11__Glass_floor" title="Glass floor" onstart="" thumburl="panos/11__Glass_floor.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/11__Glass_floor.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/11__Glass_floor.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/11__Glass_floor.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/11__Glass_floor.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-101.185" atv="18.982" linkedscene="scene_13__kids_room_1" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-136.313" atv="14.036" linkedscene="scene_14__kidss_room_2" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-173.050" atv="8.955" linkedscene="scene_09__entre" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="85.959" atv="16.998" linkedscene="scene_14__master_lounge" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="156.538" atv="28.514" linkedscene="scene_15__master_bedroom" />
+
+	</scene>
+
+	<scene name="scene_13__Kids_room_1" title="Kids room 2" onstart="" thumburl="panos/13__Kids_room_1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/13__Kids_room_1.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/13__Kids_room_1.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/13__Kids_room_1.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/13__Kids_room_1.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="63.078" atv="18.320" linkedscene="scene_11__glass_floor" />
+
+	</scene>
+
+	<scene name="scene_14__Kidss_room_2" title="Kids room 1" onstart="" thumburl="panos/14__Kidss_room_2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/14__Kidss_room_2.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/14__Kidss_room_2.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/14__Kidss_room_2.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/14__Kidss_room_2.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="150.727" atv="20.209" linkedscene="scene_11__glass_floor" />
+
+	</scene>
+
+	<scene name="scene_14__Master_lounge" title="Master lounge" onstart="" thumburl="panos/14__Master_lounge.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/14__Master_lounge.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/14__Master_lounge.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/14__Master_lounge.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/14__Master_lounge.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-111.530" atv="12.995" linkedscene="scene_15__master_bedroom" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-84.711" atv="16.811" linkedscene="scene_11__glass_floor" />
+
+	</scene>
+
+	<scene name="scene_15__Master_bedroom" title="Master bedroom" onstart="" thumburl="panos/15__Master_bedroom.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/15__Master_bedroom.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/15__Master_bedroom.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/15__Master_bedroom.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/15__Master_bedroom.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="50.098" atv="3.084" linkedscene="scene_16__walk-in" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-19.439" atv="11.301" linkedscene="scene_14__master_lounge" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-67.945" atv="14.183" linkedscene="scene_11__glass_floor" />
+
+	</scene>
+
+	<scene name="scene_16__Walk-in" title="Walk-in" onstart="" thumburl="panos/16__Walk-in.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/16__Walk-in.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/16__Walk-in.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/16__Walk-in.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/16__Walk-in.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="171.794" atv="17.056" linkedscene="scene_17__master_bathroom" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-81.855" atv="7.571" linkedscene="scene_15__master_bedroom" />
+
+	</scene>
+
+	<scene name="scene_17__Master_bathroom" title="Master bathroom" onstart="" thumburl="panos/17__Master_bathroom.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/17__Master_bathroom.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/17__Master_bathroom.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/17__Master_bathroom.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/17__Master_bathroom.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-68.354" atv="18.390" linkedscene="scene_16__walk-in" />
+
+	</scene>
+
+	<scene name="scene_18__Exterior1" title="Exterior1" onstart="" thumburl="panos/18__Exterior1.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/18__Exterior1.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/18__Exterior1.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/18__Exterior1.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/18__Exterior1.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-75.346" atv="9.487" linkedscene="scene_08__bryggers" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-6.271" atv="7.092" linkedscene="scene_04__terrace" />
+
+	</scene>
+
+	<scene name="scene_19__Exterior2" title="Exterior2" onstart="" thumburl="panos/19__Exterior2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/19__Exterior2.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/19__Exterior2.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/19__Exterior2.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/19__Exterior2.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="22.989" atv="18.479" linkedscene="scene_21__exterior4" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="144.734" atv="-6.044" linkedscene="scene_04__terrace" />
+
+	</scene>
+
+	<scene name="scene_20__Exterior3" title="Exterior3" onstart="" thumburl="panos/20__Exterior3.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/20__Exterior3.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/20__Exterior3.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/20__Exterior3.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/20__Exterior3.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-31.501" atv="14.616" linkedscene="scene_19__exterior2" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-2.302" atv="16.381" linkedscene="scene_21__exterior4" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="95.389" atv="3.764" linkedscene="scene_18__exterior1" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="174.305" atv="9.479" linkedscene="scene_01__alrum_center" />
+
+	</scene>
+
+	<scene name="scene_21__Exterior4" title="Exterior4" onstart="" thumburl="panos/21__Exterior4.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/21__Exterior4.tiles/preview.jpg" />
+
+		<image type="CUBE" stereo="true" stereolabels="1|2" multires="true" tilesize="512">
+			<level tiledimagewidth="2624" tiledimageheight="2624">
+				<cube url="panos/21__Exterior4.tiles/%t/%s/l3/%v/l3_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1280" tiledimageheight="1280">
+				<cube url="panos/21__Exterior4.tiles/%t/%s/l2/%v/l2_%t/%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/21__Exterior4.tiles/%t/%s/l1/%v/l1_%t/%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="55.045" atv="-2.679" linkedscene="scene_19__exterior2" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-11.496" atv="-10.994" linkedscene="scene_04__terrace" />
+
+	</scene>
+
+
+</krpano>
